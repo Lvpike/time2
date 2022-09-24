@@ -3,7 +3,7 @@ var k = 0;
 
 var time1;
 */
-
+const music = new Audio("Ring07.wav");
 var j = 30; //休息完毕的时间，单位分钟
 var g = 1; //该休息了的时间，单位分钟
 var worker1;
@@ -47,10 +47,6 @@ function timeToRest() {
     console.log(e.data);
     if (e.data[0] !== undefined) {
       document.getElementById("p2").innerHTML = e.data[0] + ":" + e.data[1];
-    }
-    if (e.data[0] === 0 && e.data[1] === 3) {
-      console.log("播放音乐");
-      // worker1.postMessage(music);
     }
   };
 }
