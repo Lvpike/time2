@@ -1,4 +1,4 @@
-var i = 0;
+/*var i = 0;
 var k = 0;
 var j = 30; //休息完毕的时间，单位分钟
 var g = 1; //该休息了的时间，单位分钟
@@ -58,3 +58,17 @@ function timeToWork() {
   self.postMessage(message);
 }
 timeToWork();
+*/
+var message = 0;
+var myClock;
+myClock = setInterval(() => {
+  self.onmessage = (e) => {
+    if (e.data === "restart") {
+      message = 0;
+    }
+    console.log(e.data);
+    console.log(message);
+  };
+  message = message + 1;
+  self.postMessage(message);
+}, 1000);
